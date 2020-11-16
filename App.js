@@ -1,21 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, ScrollView, SafeAreaView, Text } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import UserForm from './UserForm';
+
+const App = () => (
+  <SafeAreaView style={styles.main}>
+    <Text style={styles.toolbar}>Contact Us</Text>
+    <ScrollView style={styles.content}>
+      <UserForm />
+    </ScrollView>
+  </SafeAreaView>
+);
 
 const styles = StyleSheet.create({
-  container: {
+  main: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#ecf0f1',
+  },
+  toolbar: {
+    backgroundColor: '#1abc9c',
+    padding: 20,
+    color: '#fff',
+    fontSize: 20,
+  },
+  content: {
+    padding: 10,
   },
 });
+
+export default App;
+
+// expo init my-app
